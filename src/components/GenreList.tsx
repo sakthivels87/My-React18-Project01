@@ -3,6 +3,7 @@ import styles from "./GenreList.module.css";
 import {
   Button,
   HStack,
+  Heading,
   Image,
   List,
   ListItem,
@@ -31,7 +32,9 @@ const GenereList = ({ onSelectedGenre, selectedGenre }: Props) => {
     );
   return (
     <>
-      <h2 className={styles.heading}>Genres</h2>
+      <Heading as="h1" marginY={5}>
+        Genres
+      </Heading>
       <List spacing={3}>
         {data.map((genre) => (
           <ListItem key={genre.id} className={styles.listGroupItem}>
@@ -48,6 +51,8 @@ const GenereList = ({ onSelectedGenre, selectedGenre }: Props) => {
                 fontSize="lg"
                 fontWeight={selectedGenre === genre ? "bold" : "normal"}
                 onClick={() => onSelectedGenre(genre)}
+                whiteSpace="normal"
+                textAlign="left"
               >
                 {genre.name}
               </Button>

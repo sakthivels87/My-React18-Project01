@@ -1,4 +1,5 @@
 import styles from "./GenreList.module.css";
+
 import {
   Button,
   HStack,
@@ -8,16 +9,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
-
-const getCroppedImage = (url: string) => {
-  if (!url) return "";
-  const croppedPath = "crop/600/400/";
-  const targetContent = "media/";
-  const mediaIndex = url.indexOf(targetContent) + targetContent.length;
-  const imgPath =
-    url.slice(0, mediaIndex) + croppedPath + url.slice(mediaIndex);
-  return imgPath;
-};
+import getCroppedImage from "../services/no-image";
 
 interface Props {
   onSelectedGenre: (genre: Genre) => void;

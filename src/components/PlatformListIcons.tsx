@@ -8,7 +8,6 @@ import {
   FaLinux,
   FaApple,
 } from "react-icons/fa";
-import { GrPersonalComputer } from "react-icons/gr";
 import { BsGlobe, BsNintendoSwitch } from "react-icons/bs";
 import { Box, HStack, Icon, Text } from "@chakra-ui/react";
 import { IconType } from "react-icons/lib/esm/iconBase";

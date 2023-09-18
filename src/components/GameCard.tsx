@@ -18,7 +18,9 @@ const GameCard = ({ game }: Props) => {
           />
           <ScoreBadge score={game.metacritic} />
         </HStack>
-        <Heading fontSize="2xl">{game.name}</Heading>
+        <Heading fontSize="2xl" textAlign="left">
+          {game.name}
+        </Heading>
       </CardBody>
     </Card>
   );

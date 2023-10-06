@@ -12,13 +12,14 @@ import "./index.css";
 import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
+  genreId?: number;
+  platformId?: number;
   ordering: string;
   search: string;
 }
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+  const [gameTitle, setGameTitle] = useState("");
   return (
     <div>
       <Grid
@@ -38,8 +39,10 @@ function App() {
         <Show above="lg">
           <GridItem area="aside" paddingX={5}>
             <GenereList
-              selectedGenre={gameQuery.genre}
-              onSelectedGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+              selectedGenreId={gameQuery.genreId}
+              onSelectedGenre={(genreId) => {
+                setGameQuery({ ...gameQuery, genreId });
+              }}
             />
           </GridItem>
         </Show>
@@ -48,10 +51,10 @@ function App() {
             <GameHeading gameQuery={gameQuery} />
             <Flex gap={5}>
               <PlatformFilter
-                onSelectedPlatform={(platform) =>
-                  setGameQuery({ ...gameQuery, platform })
+                onSelectedPlatform={(platformId) =>
+                  setGameQuery({ ...gameQuery, platformId })
                 }
-                selectedPlatform={gameQuery.platform}
+                selectedPlatformId={gameQuery.platformId}
               />
               <SortingOrder
                 sortOrder={gameQuery.ordering}

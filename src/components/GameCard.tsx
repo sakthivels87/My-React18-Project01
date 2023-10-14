@@ -4,6 +4,7 @@ import PlatformListIcons from "./PlatformListIcons";
 import ScoreBadge from "./ScoreBadge";
 import getCroppedImage from "../services/no-image";
 import Emoji from "./Emoji";
+import { Link } from "react-router-dom";
 interface Props {
   game: Game;
 }
@@ -20,7 +21,7 @@ const GameCard = ({ game }: Props) => {
           <ScoreBadge score={game.metacritic} />
         </HStack>
         <Heading fontSize="2xl" textAlign="left">
-          {game.name}
+          <Link to={"games/" + game.slug}>{game.name}</Link>
         </Heading>
         <Emoji rating={game.rating_top} />
       </CardBody>

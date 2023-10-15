@@ -9,7 +9,9 @@ const ToggleColorMode = () => {
         onClick={toggleColorMode}
         colorScheme="green"
         onChange={toggleColorMode}
-      ></Switch>
+      >
+        Mode
+      </Switch>
     </div>
   );
 };

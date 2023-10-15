@@ -5,6 +5,7 @@ import { Spinner } from "@chakra-ui/spinner";
 import ExpandableText from "../components/ExpandableText";
 import GameAttributes from "../components/GameAttributes";
 import GameTrailer from "../components/GameTrailer";
+import GameThumbnail from "../components/GameThumbnail";
 
 const GameDetailPage = () => {
   const params = useParams();
@@ -18,6 +19,7 @@ const GameDetailPage = () => {
       <ExpandableText>{game?.description_raw}</ExpandableText>
       <GameAttributes game={game} />
       <GameTrailer gameId={game?.id} />
+      <GameThumbnail gameId={game?.id} />
     </Box>
   );
 };
